@@ -1,0 +1,41 @@
+.home-main {
+  min-height: calc(100vh - 14rem);
+  width: 100%;
+  max-width: 142rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #dae5f5;
+
+  /* margin: 6rem 10rem; */
+}
+.home-main h1 {
+  /* margin-top: 10rem; */
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 59px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.home-main p {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.footer {
+  position: relative;
+  width: 24.5rem;
+  height: 1.8rem;
+  top: 23.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
