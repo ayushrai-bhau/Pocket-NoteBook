@@ -1,27 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import sendSvg from "../assets/Vector (5).png";
-const noteSide = ({ activeGroupId, groups,newNote,setNewNote,handleAddNote,firstInitials,selectedColor }) => {
+import BackSvg from "../assets/Vector.png";
 
-  const activeGroup = activeGroupId ? groups.find((group) => group.id === activeGroupId) : null;
+const noteSide = ({ activeGroupId, groups,newNote,setNewNote,handleAddNote,firstInitials,setIsButtonClicked,btn,setbtn,handleTextareaKeyDown }) => {
+
+ 
+  const [currentGroup, setCurrentGroup] = useState(null);
+
+  useEffect(() => {
+    if (activeGroupId) {
+      const group = groups.find((group) => group.id === activeGroupId);
+      setCurrentGroup(group);
+    } else {
+      setCurrentGroup(null);
+    }
+  }, [activeGroupId, groups]);
+
+
+  const bgColorStyle = currentGroup ? { "--bgcolorintial": currentGroup.color } : {};
+
+  
+
+const handleButtonClick=()=>{
+  setIsButtonClicked(false)
+  setbtn(true)
+}
+
+  
   return (
-
-    <>
-      {" "}
-      <div className="main">
-        <header style={activeGroup ? { '--bgcolorintial': selectedColor } : {}}>
-        <p>{activeGroup && firstInitials(activeGroup.name)}</p>
-        {activeGroup && activeGroup.name}
+<>
+    <div className={`main ${btn ? "flex-zero" : " "}`}>
+        <header style={bgColorStyle}>
+          <button onClick={handleButtonClick}>
+            <img src={BackSvg} alt="back" />
+          </button>
+          <p>{currentGroup && firstInitials(currentGroup.name)}</p>
+          {currentGroup && currentGroup.name}
         </header>
         <div className="notes">
           <div className="note ">
-            {activeGroupId &&
-              groups
-                .find((group) => group.id === activeGroupId)
-                .notes.map((note, index) => (
-                  <p className="txt"  key={index}>
-                    {note}
-                  </p>
-                ))}
+            {currentGroup &&
+              currentGroup.notes.map((note, index) => (
+                <p className="txt" key={index}>
+                  {note}
+                </p>
+              ))}
           </div>
         </div>
         <div className="notefooter">
@@ -29,14 +52,13 @@ const noteSide = ({ activeGroupId, groups,newNote,setNewNote,handleAddNote,first
             <textarea
               value={newNote}
               onChange={(e) => setNewNote(e.target.value)}
+              onKeyDown={handleTextareaKeyDown}
+   
               type="text"
               placeholder="Enter your text here..........."
               rows="4"
               cols="50"
-            
             />
-             
-           
             <button onClick={handleAddNote} className="send">
               <img src={sendSvg} alt="send-logo" />
             </button>

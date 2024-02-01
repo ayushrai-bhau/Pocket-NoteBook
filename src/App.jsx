@@ -8,33 +8,25 @@ import "./App.css";
 
 function App() {
   
-  const colors =['#B38BFA',' #FF79F2', '#43E6FC','#F19576','#0047FF','#6691FF' ]
+  
   const [groups, setGroups] = useState(() => {
     const storedGroups = localStorage.getItem("groups");
     return storedGroups ? JSON.parse(storedGroups) : [];});
-  const [activeGroupId, setActiveGroupId] = useState(null);
+    
+    const [activeGroupId, setActiveGroupId] = useState(null);
+   
   const [showPopup, setShowPopup] = useState(false);
   const [newGroupName, setNewGroupName] = useState('');
   const [newNote, setNewNote] = useState('');
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [selectedColor, setSelectedColor] = useState('#B38BFA');
   const [showNoteSide, setShowNoteSide] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [btn,setbtn]=useState('false')
   
 
-
-  const setTheme = (color) =>{
-    document.documentElement.style.setProperty('--bgcolorintial',color)
-  }
-
-  const setColor =(event)=>{
-    const currentColor = event.target.style.getPropertyValue('--bgcolorintial')
-    setTheme(currentColor)
-
-    console.log(currentColor)
-  }
+  
  
-  const handleColorChange = () => {
-    setSelectedColor(setColor());
-  };
+ 
   useEffect(() => {
     const storedGroups = localStorage.getItem("groups");
     if (storedGroups) {
@@ -83,10 +75,19 @@ function App() {
       setNewNote('');
     }
   };
+  const handleTextareaKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      
+      e.preventDefault();
+      handleAddGroup()
+    }
+  }
+
 
   
   return (
     <div className="App">
+     
      <SideBar
       groups={groups}
       activeGroupId={activeGroupId}
@@ -95,16 +96,21 @@ function App() {
       firstInitials={firstInitials}
       selectedColor={selectedColor}
       setShowNoteSide={setShowNoteSide}
-      />
+      isButtonClicked={isButtonClicked}
+      setIsButtonClicked={setIsButtonClicked}
+      setbtn={setbtn}
+    
+      />   
            <Popup
       show={showPopup}
       onClose={setShowPopup}
       newGroupName={newGroupName}
       setNewGroupName={setNewGroupName}
       handleAddGroup={handleAddGroup}
-      colors={colors}
-      selectedColor={selectedColor}
-      handleColorChange={handleColorChange}
+      handleTextareaKeyDown={handleTextareaKeyDown}
+ 
+
+      setSelectedColor={setSelectedColor}
     />
       
       {showNoteSide ? (
@@ -117,6 +123,11 @@ function App() {
           setActiveGroupId={setActiveGroupId}
           firstInitials={firstInitials}
           selectedColor={selectedColor}
+          setIsButtonClicked={setIsButtonClicked}
+          btn={btn}
+          setbtn={setbtn}
+          handleTextareaKeyDown={handleTextareaKeyDown}
+    
         />
       ) : (
         <NoteHome />
