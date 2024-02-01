@@ -26,6 +26,7 @@ const popup = ({
                   onKeyDown={handleTextareaKeyDown}
                   onChange={(e) => setNewGroupName(e.target.value)}
                   placeholder="New Group Name"
+                  required
                 />
               </div>
               <div className="color-list">
