@@ -336,7 +336,7 @@ header p {
 }
 .midbtn {
  
-     top: 50rem;
+     top: 75rem;
     left: 30rem;
     margin-top: -2rem;
     
@@ -395,8 +395,8 @@ header p {
  }
  .notefooter{
   width: 44.6rem;
-  top: -10rem;
-  height: 24rem;
+  /* top: -10rem;
+  height: 24rem; */
  }
  .input{
   width: 40rem;
