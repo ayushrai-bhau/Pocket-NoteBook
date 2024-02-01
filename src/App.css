@@ -357,8 +357,8 @@ header p {
   margin-left: 1rem;
 }
 .color-item {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.5rem;
+  height:1.5rem;
   
  
   margin-left: 1rem;
@@ -366,7 +366,8 @@ header p {
 }
 .add-chats {
  
-  left: 26rem;
+  left: 25rem;
+  top: 4rem
 }
 .cancel {
 
@@ -394,6 +395,8 @@ header p {
  }
  .notefooter{
   width: 44.6rem;
+  top: -2rem;
+  height: 24rem;
  }
  .input{
   width: 40rem;
