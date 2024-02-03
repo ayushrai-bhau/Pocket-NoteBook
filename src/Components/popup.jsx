@@ -18,7 +18,7 @@ const popup = ({
           <div className="popup">
             <div className="popup-content">
               <h3>Create New group</h3>
-              <div>
+              <div className="group-name">
                 <span>Group Name</span>
                 <input
                   type="text"

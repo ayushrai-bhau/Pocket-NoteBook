@@ -18,12 +18,13 @@ const SideBar = ({ groups, activeGroupId, setActiveGroupId, setShowPopup,firstIn
             ))}
           </div>
         </div>
-      </div>
-      <div className="lowerSide"></div>
-      <button className="midbtn" onClick={() => setShowPopup(true)}>
+          <button className='midbtn' onClick={() => {setShowPopup(true);}}>
         <span>+</span>
       </button>
     </div>
+      </div>
+     
+    
   );
 };
 
