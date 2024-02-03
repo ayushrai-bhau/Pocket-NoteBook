@@ -29,14 +29,10 @@ body {
 .sidebar {
   flex: 3;
   background: #fff;
-}
-.main {
-  flex: 9;
-}
-.sidebar{
   min-height: 100vh;
- 
 }
+
+
 
 .upperSideTop h2 {
   font-family: Roboto;
@@ -58,22 +54,21 @@ body {
   padding: 10%;
 }
 .midbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #16008b;
-  width: 4vh;
-  height: 8vh;
+  width: 4%;
+  height: 8%;
   
   top: 86%;
   left: 17%;
-  border-radius: 50px;
-  float: right;
-  position: absolute;
+  border-radius: 50%;
+  
+  position: fixed;
 }
 .midbtn span {
-  font-family: Roboto;
-  font-size: 7rem;
-  font-weight: 900;
-  line-height: 6.8rem;
-  letter-spacing: 0.02em;
+  font-size: 460%;
   color: #fff;
 }
 .popup-back {
@@ -92,9 +87,9 @@ body {
 .popup {
   
     background-color: white;
-    padding: 1%;
-    width: 35%; /* Adjust to your layout requirements */
-    height: 35%; /* Adjust to your layout requirements */
+    padding: 2%;
+    width: 67vh;
+    height: 35vh;
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   
@@ -106,21 +101,21 @@ body {
   flex-direction: column;
   align-items: flex-start;
 
-  text-align: center;
+ 
   line-height: 6rem;
   font-family: Roboto;
-  font-size: 1.9rem;
+  font-size: 190%;
   font-weight: 600;
-  height: 100%;
+
 }
-.group-name{
-  width: 100%;
+.group-name {
+  width: 25vw;
 }
 .popup-content input {
-  margin-left: 2rem;
-  padding-left: 2rem;
-  width: 35rem;
-  height: 4rem;
+  margin-left: 5%;
+  padding-left: 4%;
+  width: 17vw;
+  height: 4vh;
 
   border-radius: 22px;
   background: linear-gradient(0deg, #cccccc, #cccccc),
@@ -131,36 +126,38 @@ body {
 
 .color-list {
   display: flex;
-
   align-items: center;
-  margin-top: 2rem;
+ 
+  width: 100%;
+ 
 }
 .color-item {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5vh;
+  height: 2.5vh;
   border-radius: 50%;
   background-color: var(--bgcolorintial);
-  margin-left: 2rem;
+  margin-left: 2.5rem;
   cursor: pointer;
   
 
 }
 .color-list-item{
   display: flex;
+  margin-left: 1%;
 }
 
 .add-chats {
-  position: relative;
-  width: 14%;
-  height: 13%;
+  position: fixed;
+  width: 5%;
+  height: 4%;
   color: #fff;
   border-radius: 11px;
   background: #001f8b;
-  top: 32%;
-  left: 81%;
+  top: 61%;
+  left: 61%;
 }
 .cancel{
-  position: absolute;
+  position: fixed;
   top: 33%;
   left: 65.6%;
   width: 1%;
@@ -212,16 +209,16 @@ span {
 header {
   color: #fff;
   background: #001f8b;
-  width: 143rem;
-  height: 8.5rem;
+  width: 100%;
+  height: 8%;
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
-  /* font-family: Roboto; */
-  font-size: 2.4rem;
-  font-weight: 500;
-  line-height: 2.8rem;
-  letter-spacing: 0.02em;
+  padding:1rem 2rem;
+ 
+  font-size: 250%;
+  
+  line-height: 2.8%;
+  letter-spacing: 0.01em;
 }
 header button{
   display: none;
@@ -238,23 +235,25 @@ header p {
 }
 .main {
   min-height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 9;
 
-  /* margin: 6rem 10rem; */
+  
 }
 .notes {
   overflow: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
   width: 100%;
-  max-width: 142rem;
+  max-width: 72vw;
   height: calc(100vh - 30rem);
 }
 .note {
   margin: 1rem;
-  padding: 2rem 3rem;
+  
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -264,44 +263,46 @@ header p {
 .txt {
   background: #ffffff;
   box-shadow: 0px 4px 20px 0px #00000040;
-  width:fit-content;
-  max-width: 100%;
-  border-radius: 5px;
+  
+  width: 100%;
+ 
+  
   padding: 2rem;
-  font-family: Roboto;
-  font-size: 1.8rem;
-  font-weight: 400;
+  
+  font-size: 2rem;
+  
   line-height: 2.9rem;
   letter-spacing: 0.035em;
-  text-align: left;
+  
   margin-bottom: 2rem;
   overflow-wrap: break-word;
 }
 .notefooter {
-  width: 142.9rem;
-  height: 21rem;
+  width: 100%;
+  min-height: 24%;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #001f8b;
-  position: relative;
-  top: 1rem;
+  background: #001f8b;;
+  
+
 }
 .input {
-  /* padding: 0.5rem; */
+  
   background: linear-gradient(0deg, #cccccc, #cccccc),
     linear-gradient(0deg, #ffffff, #ffffff);
 
   display: flex;
   align-items: center;
-  width: 137.4rem;
-  height: 17rem;
+  width: 96%;
+  height: 82%;
   border-radius: 9px;
   border: 1px;
 }
 .input > textarea {
-  width: calc(100% - 3rem);
+  width: 100%;
   height: 100%;
   outline: none;
   overflow-wrap: break-word;
@@ -320,13 +321,14 @@ header p {
   border: none;
 }
 .send {
-  position: relative;
-  top: 5rem;
-  right: 2rem;
+  position: fixed;
+  top: 94%;
+  right: 2%;
 }
 
 
 @media (max-width: 768px){
+  *
   .sidebar {
     flex: 1; 
   
@@ -334,27 +336,37 @@ header p {
 
 
 .upperSideTop {
-  margin-top: 2rem; 
+  margin-top: 4%;
   gap: 3rem; 
 }
 .midbtn {
   top: 84%;
   left: 75%;
-  width: 10vh;
-  height: 10vh;
-  
+  width: 18vw;
+  height: 8.5vh;
+ 
 
 }
 .query-btn {
 
   height: calc(100vh - 20rem);
 }
+.popup {
+ 
+  width: 87vw;
+  height: 30vh;
+  
+}
 
 .popup-content input{
-  width: 20rem;
+  width: 50%;
+}
+.group-name {
+  width: 100%;
 }
 .color-list-item {
-  width: 22rem;
+  width: 47%;
+
   margin-left: 1rem;
 }
 .color-item {
@@ -366,22 +378,20 @@ header p {
  
 }
 .add-chats {
- 
-  left: 25rem;
-  top: 4rem
+  left: 77%;
+  top: 60%;
+    width: 15%;
 }
 .cancel {
 
   
-  left: 35rem;
+  left: 90%;
+  top: 35.5%;
 }
-.main{
 
-  width:100%;
- 
- }
  header{
-  width: 45rem;
+  
+  height: 10vh;
  }
  header button{
   display: block;
@@ -394,14 +404,21 @@ header p {
   height: 6rem;
 
  }
- .notefooter{
-  width: 44.6rem;
-  /* top: -10rem;
-  height: 24rem; */
+ /* .notefooter{
+  width: 120%;
+
+ } */
+ .notes{
+  height: calc(103vh - 31rem);;
  }
- .input{
-  width: 40rem;
+ .send{
+  position: relative;
+  top: 38%;
+  right: 2%;
  }
+
+
+ 
  .input > textarea{
   font-size: 2.5rem;
   margin-top: 1rem;
@@ -419,121 +436,4 @@ header p {
 
 
 }
-
-/* @media (max-width: 375px) and (max-height: 667px) {
-  .sidebar {
-    flex: 1;
-  }
-  .upperSideTop {
-    margin-top: 2rem;
-    gap: 3rem;
-  }
-  .midbtn {
-    top: 47rem;
-    left: 24rem;
-   
-    width: 8rem;
-    height: 8rem;
-  }
-  .query-btn {
-    height: calc(100vh - 17rem);
-  }
-  .popup {
-    
-    padding: 2rem;
-    width: 26rem;
-    height: 19.7rem;
-    
-}
-.popup-content{
-  height: 120%;
-}
-.group-name{
-  height: 50%;
-  padding-bottom: 0.5rem;
-  
-}
-  .popup-content input {
-    width: 14rem;
-    
-    font-size: 1rem;
-    
-  }
-  .popup-content span {
-   
-    font-size: 1rem;
-  }
-  .query-btn p {
-    margin: 0rem 2rem;
-  }
-  .query-btn button {
-    
-    
-    width: 25rem;
-   
-}
-.color-list{
-  margin-top: 1rem;
-}
-  
-  .color-list-item {
-    width: 14rem;
-    margin-left: 1rem;
-  }
-  .color-item {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-left: 1rem;
-   
-  }
-  .add-chats {
-    left: 16rem;
-    top: 1rem;
-    width: 6rem;
-    height: 3rem;
-
-  }
-  .cancel {
-    left: 19rem;
-    top: -17rem;
-  }
-  .main {
-    width: 100%;
-  }
-  header {
-    width: 37rem;
-  }
-  header button {
-    display: block;
-    background: transparent;
-    border: none;
-    margin: 0rem 1rem;
-  }
-  header p {
-    width: 6rem;
-    height: 6rem;
-  }
-  .notefooter {
-    width: 33rem;
-   
-  }
-  .input {
-    width: 30rem;
-    height: 15rem;
-  }
-  .input > textarea {
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-right: 3rem;
-  }
-  .sidebar.flex-zero {
-    display: none;
-  }
-  .main.flex-zero {
-    display: none;
-  }
-  .midbtn.flex-zero {
-    display: none;
-  }
-} */
 
