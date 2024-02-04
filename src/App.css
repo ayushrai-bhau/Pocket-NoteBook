@@ -58,8 +58,8 @@ body {
   align-items: center;
   justify-content: center;
   background: #16008b;
-  width: 4%;
-  height: 8%;
+  width: 8rem;
+  height: 8rem;
   
   top: 86%;
   left: 17%;
@@ -109,7 +109,7 @@ body {
 
 }
 .group-name {
-  width: 25vw;
+  width: 26vw;
 }
 .popup-content input {
   margin-left: 5%;
