@@ -62,11 +62,12 @@ function App() {
   };
   const handleAddNote = () => {
     if (newNote.trim() !== '') {
+      const currentDateTime = new Date().toISOString(); // Get current date and time in ISO format
       const updatedGroups = groups.map((group) => {
         if (group.id === activeGroupId) {
           return {
             ...group,
-            notes: [...group.notes, newNote],
+            notes: [...group.notes, { note: newNote, dateTime: currentDateTime }],
           };
         }
         return group;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sendSvg from "../assets/Vector (5).png";
 import BackSvg from "../assets/Vector.png";
+import DateTime from "./dateTime";
 
 const noteSide = ({ activeGroupId, groups,newNote,setNewNote,handleAddNote,firstInitials,setIsButtonClicked,btn,setbtn,handleTextareaKeyDown }) => {
 
@@ -41,9 +42,12 @@ const handleButtonClick=()=>{
           <div className="note ">
             {currentGroup &&
               currentGroup.notes.map((note, index) => (
-                <p className="txt" key={index}>
+                <div className="txt"  key={index}>
+                <p >
                   {note.note}
                 </p>
+                <div className="dataTime"><DateTime date={note.dateTime}/></div>
+                </div>
               ))}
           </div>
         </div>
