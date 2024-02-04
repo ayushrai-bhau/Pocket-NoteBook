@@ -42,7 +42,7 @@ const handleButtonClick=()=>{
             {currentGroup &&
               currentGroup.notes.map((note, index) => (
                 <p className="txt" key={index}>
-                  {note}
+                  {note.note}
                 </p>
               ))}
           </div>
