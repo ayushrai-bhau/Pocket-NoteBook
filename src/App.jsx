@@ -50,6 +50,12 @@ function App() {
       setShowPopup(false);
     }
   };
+  const handleDeleteGroup = (groupId) => {
+    const updatedGroups = groups.filter((group) => group.id !== groupId);
+    setGroups(updatedGroups);
+    setActiveGroupId(null); 
+    console.log('hhhk')
+  };
   const firstInitials = (string) => {
     const words = string?.split(" ");
     let initials = "";
@@ -62,7 +68,7 @@ function App() {
   };
   const handleAddNote = () => {
     if (newNote.trim() !== '') {
-      const currentDateTime = new Date().toISOString(); // Get current date and time in ISO format
+      const currentDateTime = new Date().toISOString(); 
       const updatedGroups = groups.map((group) => {
         if (group.id === activeGroupId) {
           return {
@@ -75,6 +81,18 @@ function App() {
       setGroups(updatedGroups);
       setNewNote('');
     }
+  };
+  const handleDeleteNote = (noteIndex) => {
+    const updatedGroups = groups.map((group) => {
+      if (group.id === activeGroupId) {
+        return {
+          ...group,
+          notes: group.notes.filter((_, index) => index !== noteIndex),
+        };
+      }
+      return group;
+    });
+    setGroups(updatedGroups);
   };
   const handleTextareaKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -100,6 +118,7 @@ function App() {
       isButtonClicked={isButtonClicked}
       setIsButtonClicked={setIsButtonClicked}
       setbtn={setbtn}
+      handleDeleteGroup={handleDeleteGroup}
     
       />   
            <Popup
@@ -128,6 +147,7 @@ function App() {
           btn={btn}
           setbtn={setbtn}
           handleTextareaKeyDown={handleTextareaKeyDown}
+          handleDeleteNote={handleDeleteNote}
     
         />
       ) : (

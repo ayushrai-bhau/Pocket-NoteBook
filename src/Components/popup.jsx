@@ -2,6 +2,7 @@ import React from "react";
 import ColorItem from "./colorItem";
 import "../App.css";
 
+
 const popup = ({
   show,
   onClose,
@@ -34,7 +35,7 @@ const popup = ({
 
                 <ColorItem
                   setSelectedColor={setSelectedColor}
-                  handleTextareaKeyDown={handleTextareaKeyDown}
+                 
                 />
               </div>
               <button onClick={handleAddGroup} className="add-chats">
