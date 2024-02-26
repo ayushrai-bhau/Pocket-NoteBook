@@ -27,9 +27,10 @@ body {
   position: relative;
 }
 .sidebar {
-  flex: 3;
+  /* flex: 3; */
   background: #fff;
   min-height: 100vh;
+  width: 22vw;
 }
 
 
@@ -181,7 +182,7 @@ body {
 
   background: transparent;
   padding: 1rem;
-  width: 30rem;
+  width: 16vw;
   border: none;
   border-radius: 6rem;
 }
@@ -338,7 +339,7 @@ header p {
 
 }
 .delete-btn{
-  left: 18%;
+  left: 15%;
   
   
   position:fixed;
