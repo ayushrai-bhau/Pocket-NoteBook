@@ -457,6 +457,9 @@ header p {
   width: 6%;
   
 }
+.group-button{
+  width: 63vw;
+}
 
  .sidebar.flex-zero {
   display: none;
